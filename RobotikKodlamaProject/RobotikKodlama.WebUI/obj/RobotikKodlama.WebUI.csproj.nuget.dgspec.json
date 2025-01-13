@@ -1,28 +1,31 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\ugur.topak\\source\\repos\\ugrtpk\\RobotikKodlamaWeb\\RobotikKodlamaProject\\RobotikKodlama.WebUI\\RobotikKodlama.WebUI.csproj": {}
+    "C:\\Users\\ugurtopak\\source\\repos\\ugrtpk\\RobotikKodlamaWeb\\RobotikKodlamaProject\\RobotikKodlama.WebUI\\RobotikKodlama.WebUI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\ugur.topak\\source\\repos\\ugrtpk\\RobotikKodlamaWeb\\RobotikKodlamaProject\\RobotikKodlama.WebUI\\RobotikKodlama.WebUI.csproj": {
+    "C:\\Users\\ugurtopak\\source\\repos\\ugrtpk\\RobotikKodlamaWeb\\RobotikKodlamaProject\\RobotikKodlama.WebUI\\RobotikKodlama.WebUI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\ugur.topak\\source\\repos\\ugrtpk\\RobotikKodlamaWeb\\RobotikKodlamaProject\\RobotikKodlama.WebUI\\RobotikKodlama.WebUI.csproj",
+        "projectUniqueName": "C:\\Users\\ugurtopak\\source\\repos\\ugrtpk\\RobotikKodlamaWeb\\RobotikKodlamaProject\\RobotikKodlama.WebUI\\RobotikKodlama.WebUI.csproj",
         "projectName": "RobotikKodlama.WebUI",
-        "projectPath": "C:\\Users\\ugur.topak\\source\\repos\\ugrtpk\\RobotikKodlamaWeb\\RobotikKodlamaProject\\RobotikKodlama.WebUI\\RobotikKodlama.WebUI.csproj",
-        "packagesPath": "C:\\Users\\ugur.topak\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\ugur.topak\\source\\repos\\ugrtpk\\RobotikKodlamaWeb\\RobotikKodlamaProject\\RobotikKodlama.WebUI\\obj\\",
+        "projectPath": "C:\\Users\\ugurtopak\\source\\repos\\ugrtpk\\RobotikKodlamaWeb\\RobotikKodlamaProject\\RobotikKodlama.WebUI\\RobotikKodlama.WebUI.csproj",
+        "packagesPath": "C:\\Users\\ugurtopak\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\ugurtopak\\source\\repos\\ugrtpk\\RobotikKodlamaWeb\\RobotikKodlamaProject\\RobotikKodlama.WebUI\\obj\\",
         "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft\\Xamarin\\NuGet\\"
+        ],
         "configFilePaths": [
-          "C:\\Users\\ugur.topak\\AppData\\Roaming\\NuGet\\NuGet.Config",
-          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+          "C:\\Users\\ugurtopak\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Xamarin.Offline.config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -70,7 +73,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.302/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.206/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

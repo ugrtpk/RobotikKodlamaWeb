@@ -4,8 +4,8 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 -->
 <Project>
   <PropertyGroup>
-    <_PublishTargetUrl>C:\Users\ugur.topak\source\repos\ugrtpk\RobotikKodlamaWeb\RobotikKodlamaProject\publish\</_PublishTargetUrl>
-    <History>True|2025-01-13T11:51:59.7219935Z||;</History>
+    <_PublishTargetUrl>C:\Users\ugurtopak\source\repos\ugrtpk\RobotikKodlamaWeb\RobotikKodlamaProject\publish</_PublishTargetUrl>
+    <History>True|2025-01-13T20:35:23.5608899Z;True|2025-01-13T23:33:35.2784156+03:00;True|2025-01-13T23:31:27.7201612+03:00;True|2025-01-13T23:31:17.8889512+03:00;True|2025-01-13T23:30:18.4013865+03:00;True|2025-01-13T23:21:00.6548490+03:00;True|2025-01-13T14:51:59.7219935+03:00;</History>
     <LastFailureDetails />
   </PropertyGroup>
 </Project>
