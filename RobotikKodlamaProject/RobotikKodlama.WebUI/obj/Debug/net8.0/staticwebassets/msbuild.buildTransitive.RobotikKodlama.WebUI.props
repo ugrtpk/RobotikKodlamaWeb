@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\buildMultiTargeting\RobotikKodlama.WebUI.props" />
+</Project>

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("RobotikKodlama.WebUI")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+aa777003048bc372b5a072f90aeb00c4103fac57")]
 [assembly: System.Reflection.AssemblyProductAttribute("RobotikKodlama.WebUI")]
 [assembly: System.Reflection.AssemblyTitleAttribute("RobotikKodlama.WebUI")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
