@@ -1,0 +1,25 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+# Visual Studio ile ilgili dosyaları ignore et
+.vs/
+*.user
+*.suo
+*.cache
+*.csproj.user
+*.sln.docstates
+
+# Bin ve obj klasörlerini ignore et
+bin/
+obj/
+
+# Derleme zamanında oluşan dosyalar
+*.exe
+*.dll
+*.pdb
+*.log
+*.pyc
+*.cache
+*.zip

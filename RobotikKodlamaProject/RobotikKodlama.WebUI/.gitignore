@@ -1,0 +1,22 @@
+
+
+# Visual Studio ile ilgili dosyalarý ignore et
+.vs/
+*.user
+*.suo
+*.cache
+*.csproj.user
+*.sln.docstates
+
+# Bin ve obj klasörlerini ignore et
+bin/
+obj/
+
+# Derleme zamanýnda oluþan dosyalar
+*.exe
+*.dll
+*.pdb
+*.log
+*.pyc
+*.cache
+*.zip
