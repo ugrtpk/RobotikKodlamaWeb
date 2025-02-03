@@ -23,3 +23,8 @@ obj/
 *.pyc
 *.cache
 *.zip
+/RobotikKodlamaProject/publish
+
+# IDE ve işletim sistemi dosyaları
+.DS_Store
+Thumbs.db

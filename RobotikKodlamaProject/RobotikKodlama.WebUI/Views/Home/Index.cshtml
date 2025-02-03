@@ -1,15 +1,28 @@
-﻿    <!-- Hero Start -->
+﻿
+<style type="text/css">
+
+    form label{
+        font-weight:bold;
+    }
+
+    form .form-group{
+        margin-top:15px!important;
+    }
+
+</style> 
+   
+<!-- Hero Start -->
 <div class="container-fluid pt-5 bg-primary hero-header mb-5">
     <div class="container pt-5">
         <div class="row g-5 pt-5">
             <div class="col-lg-6 align-self-center text-center text-lg-start mb-lg-5">
-                <div class="btn btn-sm border rounded-pill text-white px-3 mb-3 animated slideInRight">filda robot</div>
+                <div class="btn btn-sm border rounded-pill text-white px-3 mb-3 animated slideInRight">Techbot Academy</div>
                 <h1 class="display-4 text-white mb-4 animated slideInRight">Kodla, Keşfet, İnşa Et</h1>
                 <p class="text-white mb-4 animated slideInRight">
                     Robotik dünyasına adım at ve kendi projelerini hayata geçir! Sitemizde eğlenceli kodlama dersleri, interaktif aktiviteler ve yaratıcı robot yapım rehberleri seni bekliyor. Hayal gücünü kullan, yeni şeyler keşfet ve kendi robotlarını inşa ederek geleceğin mühendisleri arasında yerini al. Her adımda öğrenmenin keyfini çıkar ve teknolojiyle dost ol!
                 </p>
-                <a href="#" class="btn btn-warning py-sm-3 px-sm-5 rounded-pill me-3 animated slideInRight"><b>ÜCRETSİZ Deneme Ders Kaydı</b></a>
-                <a href="#" class="btn btn-outline-light py-sm-3 px-sm-5 rounded-pill animated slideInRight">İletişim</a>
+                <a href="#" class="btn btn-warning py-sm-3 px-sm-5 rounded-pill me-3 animated slideInRight" data-bs-toggle="modal" data-bs-target="#kayitModal"><b>ÜCRETSİZ Deneme Ders Kaydı</b></a>
+                <a href="/Home/Communication" class="btn btn-outline-light py-sm-3 px-sm-5 rounded-pill animated slideInRight">İletişim</a>
             </div>
             <div class="col-lg-6 align-self-end text-center text-lg-end">
                 <!--<img class="img-fluid" src="img/hero-img.png" alt="">-->
@@ -22,19 +35,55 @@
 </div>
 <!-- Hero End -->
 <!-- Full Screen Search Start -->
-<div class="modal fade" id="searchModal" tabindex="-1">
-    <div class="modal-dialog modal-fullscreen">
-        <div class="modal-content" style="background: rgba(20, 24, 62, 0.7);">
-            <div class="modal-header border-0">
-                <button type="button" class="btn btn-square bg-white btn-close" data-bs-dismiss="modal"
-                        aria-label="Close"></button>
+<div class="modal fade" id="kayitModal" tabindex="-1" aria-labelledby="modalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="modalLabel">Ücretsiz Deneme Dersi Kayıt Bilgileri</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body d-flex align-items-center justify-content-center">
-                <div class="input-group" style="max-width: 600px;">
-                    <input type="text" class="form-control bg-transparent border-light p-3"
-                           placeholder="Arama anahtar kelimesini yazın">
-                    <button class="btn btn-light px-4"><i class="bi bi-search"></i></button>
-                </div>
+            <div class="modal-body">
+
+                <form id="frmRandevu">
+                    <div class="row">
+                        <div class="form-group">
+                            <label>Velinin Adı Soyadı</label>
+                            <input type="text" class="form-control" name="VeliAdSoyad" id="tbAdSoyad" />
+                        </div>
+                        <div class="form-group">
+                            <label>Velinin Telefonu</label>
+                            <input type="text" class="form-control" name="VeliTelefon" id="tbTelefon" />
+                        </div>
+                        <div class="form-group">
+                            <label>Öğrencinin Adı Soyadı</label>
+                            <input type="text" class="form-control" name="OgrenciAdSoyad" id="tbOgrenciAdSoyad" />
+                        </div>
+                        <div class="form-group">
+                            <label>Öğrencinin Doğum Tarihi</label>
+                            <input type="date" class="form-control" name="OgrenciDogumTarihi" id="tbOgrenciDogumTarihi" />
+                        </div>
+                        <div class="form-group">
+                            <label>Öğrencinin Doğum Tarihi</label>
+                            <input type="text" class="form-control" name="OgrenciSinifi" id="tbOgrenciSinif" />
+                        </div> 
+                        <div class="form-group">
+                            <label>Açıklama</label>
+                            <textarea cols="7" class="form-control" name="Aciklama" id="tbAciklama">
+
+                            </textarea>
+                        </div>
+                        <div class="form-group alert alert-warning" role="alert">
+                            Randevu gün ve saati için eğitim koordinatörümüz sizi arayacak ve birlikte uygun gün ve saat belirlenecektir.
+                        </div>
+                    </div>
+                </form>
+
+
+               
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" id="btnKaydet" onclick="RandevuKaydet();">Kaydet</button>
+                <button type="button" class="btn btn-danger" data-bs-dismiss="modal" id="btnKapat">Kapat</button>
             </div>
         </div>
     </div>
@@ -42,39 +91,36 @@
 <!-- Full Screen Search End -->
 <!-- About Start -->
 <div class="container-fluid py-5">
-    <div class="container">
+    <div class="container py-5">
         <div class="row g-5 align-items-center">
             <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
                 <div class="about-img">
-                    <img class="img-fluid" src="img/about-img.jpg">
+                    <img class="img-fluid" src="~/img/about-img.jpg">
                 </div>
             </div>
             <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
-                <div class="btn btn-sm border rounded-pill text-primary px-3 mb-3">About Us</div>
-                <h1 class="mb-4">We Make Your Business Smarter with Artificial Intelligence</h1>
+                <div class="btn btn-sm border rounded-pill text-primary px-3 mb-3">Hakkımızda</div>
+                <h1 class="mb-4">Geleceğin Teknoloji Liderlerini Yetiştiriyoruz</h1>
                 <p class="mb-4">
-                    Tempor erat elitr rebum at clita. Diam dolor diam ipsum et tempor sit. Aliqu diam
-                    amet diam et eos labore. Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus
-                    clita duo justo et tempor eirmod magna dolore erat amet
+                    Biz, 4-7 yaş arası çocuklara özel olarak tasarlanmış eğlenceli ve öğretici robotik kodlama programları sunuyoruz. Amacımız, çocukların erken yaşta teknolojiyi anlamalarını sağlamak, yaratıcı düşünmelerini desteklemek ve problem çözme yeteneklerini geliştirmektir. Eğitimlerimiz, çocukların yaş ve gelişim düzeylerine uygun olarak oyun temelli bir yaklaşımla hazırlanmıştır.
+                    Velilerimiz için ise çocuklarının dijital dünyaya güvenle adım atmasını sağlayan bir rehber olmayı hedefliyoruz. Eğitimlerimizde şeffaflık, güven ve çocuklarınızın gelişimi için özveri temel prensiplerimizdir.
                 </p>
-                <p class="mb-4">
-                    Aliqu diam amet diam et eos labore. Clita erat ipsum et lorem et sit, sed stet no
-                    labore lorem sit. Sanctus clita duo justo et tempor.
-                </p>
+
                 <div class="row g-3">
                     <div class="col-sm-6">
-                        <h6 class="mb-3"><i class="fa fa-check text-primary me-2"></i>Award Winning</h6>
-                        <h6 class="mb-0"><i class="fa fa-check text-primary me-2"></i>Professional Staff</h6>
+                        <h6 class="mb-3"><i class="fa fa-check text-primary me-2"></i>Yaş Gruplarına Özel Eğitim</h6>
+                        <h6 class="mb-3"><i class="fa fa-check text-primary me-2"></i>Oyun Tabanlı Öğrenme</h6>
+                        <h6 class="mb-3"><i class="fa fa-check text-primary me-2"></i>Yapay Zeka Destekli Robotlar</h6>
+                        <h6 class="mb-3"><i class="fa fa-check text-primary me-2"></i>Güvenli ve Eğitici Ortam</h6>
                     </div>
                     <div class="col-sm-6">
-                        <h6 class="mb-3"><i class="fa fa-check text-primary me-2"></i>24/7 Support</h6>
-                        <h6 class="mb-0"><i class="fa fa-check text-primary me-2"></i>Fair Prices</h6>
+                        <h6 class="mb-3"><i class="fa fa-check text-primary me-2"></i>Teknoloji ve Yaratıcılık</h6>
+                        <h6 class="mb-3"><i class="fa fa-check text-primary me-2"></i>Problem Çözme Becerileri</h6>
+                        <h6 class="mb-3"><i class="fa fa-check text-primary me-2"></i>Velilerle Şeffaf İletişim</h6>
                     </div>
                 </div>
                 <div class="d-flex align-items-center mt-4">
-                    <a class="btn btn-primary rounded-pill px-4 me-3" href="">Read More</a>
-                    <a class="btn btn-outline-primary btn-square me-3" href=""><i class="fab fa-facebook-f"></i></a>
-                    <a class="btn btn-outline-primary btn-square me-3" href=""><i class="fab fa-twitter"></i></a>
+                  
                     <a class="btn btn-outline-primary btn-square me-3" href=""><i class="fab fa-instagram"></i></a>
                     <a class="btn btn-outline-primary btn-square" href=""><i class="fab fa-linkedin-in"></i></a>
                 </div>
@@ -270,7 +316,7 @@
 <div class="container-fluid py-5">
     <div class="container py-5">
         <div class="mx-auto text-center wow fadeIn" data-wow-delay="0.1s" style="max-width: 500px;">
-           
+
             <h1 class="mb-4">Sıkça Sorulan Sorular</h1>
         </div>
         <div class="row">
@@ -280,13 +326,13 @@
                         <h2 class="accordion-header" id="headingOne">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                                Çocuğumu kaç yaşında robotik kodlamaya götürmeliyim?
+                                Robotik kodlama nedir?
                             </button>
                         </h2>
                         <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
                              data-bs-parent="#accordionFAQ1">
                             <div class="accordion-body">
-                                Dolor nonumy tempor elitr et rebum ipsum sit duo duo. Diam sed sed magna et magna diam aliquyam amet dolore ipsum erat duo. Sit rebum magna duo labore no diam.
+                                Robotik kodlama, robotların tasarlanması, programlanması ve kontrol edilmesini öğrenmeyi içeren bir alandır. Bu süreçsıkçate robotlar, sensörler, motorlar ve çeşitli elektronik bileşenlerle çalışılır. Robotik kodlama, algoritmik düşünme, problem çözme ve yaratıcılığı geliştiren bir eğitim sunar.
                             </div>
                         </div>
                     </div>
@@ -294,13 +340,13 @@
                         <h2 class="accordion-header" id="headingTwo">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                Eğitimler kaç saat sürüyor ?
+                                Robotik kodlama eğitimi hangi yaş gruplarına uygundur?
                             </button>
                         </h2>
                         <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
                              data-bs-parent="#accordionFAQ1">
                             <div class="accordion-body">
-                                Dolor nonumy tempor elitr et rebum ipsum sit duo duo. Diam sed sed magna et magna diam aliquyam amet dolore ipsum erat duo. Sit rebum magna duo labore no diam.
+                                Eğitimlerimiz, 4 yaşından itibaren tüm yaş gruplarına uygundur. Okul öncesi için temel seviyede, lise ve yetişkinler için daha karmaşık projeler içeren programlar sunmaktayız. Her yaş grubu için özel içerikler hazırlıyoruz.
                             </div>
                         </div>
                     </div>
@@ -308,13 +354,13 @@
                         <h2 class="accordion-header" id="headingThree">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                Eğitim için hangi materyalleri almalıyım ?
+                                Robotik kodlama öğrenmek için hangi ön bilgiye ihtiyaç vardır?
                             </button>
                         </h2>
                         <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
                              data-bs-parent="#accordionFAQ1">
                             <div class="accordion-body">
-                                Dolor nonumy tempor elitr et rebum ipsum sit duo duo. Diam sed sed magna et magna diam aliquyam amet dolore ipsum erat duo. Sit rebum magna duo labore no diam.
+                                Hiçbir ön bilgiye sahip olmasanız bile eğitimlerimize katılabilirsiniz. Başlangıç seviyesinde temel kavramlarla başlıyoruz. İleri seviye eğitimlerde, temel bilgisayar bilgisi ve programlama mantığına sahip olmanız yeterlidir.
                             </div>
                         </div>
                     </div>
@@ -322,13 +368,27 @@
                         <h2 class="accordion-header" id="headingFour">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour">
-                                Eğitim sonunda rapor veriliyor mu ?
+                                Robotik kodlama neden önemlidir?
                             </button>
                         </h2>
                         <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
                              data-bs-parent="#accordionFAQ1">
                             <div class="accordion-body">
-                                Dolor nonumy tempor elitr et rebum ipsum sit duo duo. Diam sed sed magna et magna diam aliquyam amet dolore ipsum erat duo. Sit rebum magna duo labore no diam.
+                                Robotik kodlama, geleceğin teknolojisiyle tanışmanızı sağlar. Çocuklar ve yetişkinler için analitik düşünme, problem çözme ve yaratıcılık gibi becerilerin gelişmesine katkıda bulunur. Ayrıca, teknoloji çağında kariyer fırsatları yaratır ve kişisel gelişime büyük destek olur.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item wow fadeIn" data-wow-delay="0.4s">
+                        <h2 class="accordion-header" id="heading1">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                                Ücretsiz deneme dersi mevcut mu?
+                            </button>
+                        </h2>
+                        <div id="collapse1" class="accordion-collapse collapse" aria-labelledby="heading1"
+                             data-bs-parent="#accordionFAQ1">
+                            <div class="accordion-body">
+                                Evet, kararınızı daha rahat verebilmeniz için ücretsiz deneme dersleri düzenliyoruz. Bu derslerde eğitimlerimizin formatını ve içeriğini deneyimleyebilirsiniz.
                             </div>
                         </div>
                     </div>
@@ -340,13 +400,13 @@
                         <h2 class="accordion-header" id="headingFive">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                                Ödemelerimi nasıl yapacağım ?
+                                Eğitimler online mı yoksa yüz yüze mi yapılmaktadır?
                             </button>
                         </h2>
                         <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
                              data-bs-parent="#accordionFAQ2">
                             <div class="accordion-body">
-                                Dolor nonumy tempor elitr et rebum ipsum sit duo duo. Diam sed sed magna et magna diam aliquyam amet dolore ipsum erat duo. Sit rebum magna duo labore no diam.
+                                Eğitimlerimiz, hem online hem de yüz yüze seçeneklerle sunulmaktadır. Katılımcılar, kendi ihtiyaçlarına uygun formatı seçebilirler. Online eğitimlerimiz interaktif platformlarda gerçekleştirilir ve yüz yüze eğitimlerimiz uzman  eşliğinde birebir yapılır.
                             </div>
                         </div>
                     </div>
@@ -354,13 +414,13 @@
                         <h2 class="accordion-header" id="headingSix">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                                Yazılım kodlama eğitimleriniz de var mı ?
+                                Robotik kodlama öğrenmeye başlamak için uygun seviyede miyim?
                             </button>
                         </h2>
                         <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix"
                              data-bs-parent="#accordionFAQ2">
                             <div class="accordion-body">
-                                Dolor nonumy tempor elitr et rebum ipsum sit duo duo. Diam sed sed magna et magna diam aliquyam amet dolore ipsum erat duo. Sit rebum magna duo labore no diam.
+                                Eğitimlerimiz başlangıç, orta ve ileri seviyelerde sunulmaktadır. Hiç deneyiminiz yoksa başlangıç seviyesinden başlayabilir, daha önce temel bilgileriniz varsa orta ve ileri seviyelerde devam edebilirsiniz.
                             </div>
                         </div>
                     </div>
@@ -368,13 +428,13 @@
                         <h2 class="accordion-header" id="headingSeven">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#collapseSeven" aria-expanded="false" aria-controls="collapseSeven">
-                                Yazılım geliştirme eğitimleri online olarak veriliyor mu ?
+                                Çocuklar için robotik kodlama eğitimi nasıl oluyor?
                             </button>
                         </h2>
                         <div id="collapseSeven" class="accordion-collapse collapse" aria-labelledby="headingSeven"
                              data-bs-parent="#accordionFAQ2">
                             <div class="accordion-body">
-                                Dolor nonumy tempor elitr et rebum ipsum sit duo duo. Diam sed sed magna et magna diam aliquyam amet dolore ipsum erat duo. Sit rebum magna duo labore no diam.
+                                Çocuklar için hazırladığımız eğitimlerde oyunlaştırılmış öğrenme yöntemlerini ,yaşlarına uygun robot ve uygulamaları uygun kullanıyoruz. Renkli ve eğlenceli projelerle çocukların dikkatini çekerken, onları yaratıcı düşünmeye teşvik ediyoruz. Çocuklar, öğrenirken aynı zamanda eğleniyor ve teknolojiyi seviyorlar.
                             </div>
                         </div>
                     </div>
@@ -382,13 +442,41 @@
                         <h2 class="accordion-header" id="headingEight">
                             <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                                     data-bs-target="#collapseEight" aria-expanded="false" aria-controls="collapseEight">
-                                Eğitimler için online seçeneği de var mı ?
+                                Eğitimlerde kullanılan robot setleri nelerdir?
                             </button>
                         </h2>
                         <div id="collapseEight" class="accordion-collapse collapse" aria-labelledby="headingEight"
                              data-bs-parent="#accordionFAQ2">
                             <div class="accordion-body">
-                                Dolor nonumy tempor elitr et rebum ipsum sit duo duo. Diam sed sed magna et magna diam aliquyam amet dolore ipsum erat duo. Sit rebum magna duo labore no diam.
+                                Eğitimlerimizde Süper Doc Robot , Bee Bot ,Tale Bot, Mbot, Lego Spike Essential,Lego Spike Prime gibi popular setleri kullanıyoruz. Kullanılan setler, katılımcıların yaş gruplarına ve öğrenme hedeflerine göre belirlenmektedir.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item wow fadeIn" data-wow-delay="0.8s">
+                        <h2 class="accordion-header" id="heading2">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                                Eğitim ücretleri nedir ve ödeme seçenekleri var mı?
+                            </button>
+                        </h2>
+                        <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="heading2"
+                             data-bs-parent="#accordionFAQ2">
+                            <div class="accordion-body">
+                                Eğitim ücretlerimiz, programın süresine ve içeriğine bağlı olarak değişmektedir. Erken kayıt indirimleri ve detaylı bilgi için bizimle iletişime geçebilirsiniz.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-item wow fadeIn" data-wow-delay="0.8s">
+                        <h2 class="accordion-header" id="heading3">
+                            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#collapse3" aria-expanded="false" aria-controls="collapse3">
+                                Grup veya aile indirimleri sunuyor musunuz?
+                            </button>
+                        </h2>
+                        <div id="collapse3" class="accordion-collapse collapse" aria-labelledby="heading3"
+                             data-bs-parent="#accordionFAQ2">
+                            <div class="accordion-body">
+                                Evet, grup kayıtlarında veya aynı aileden birden fazla kişi katıldığında özel indirimler sunuyoruz. Daha fazla bilgi için iletişim sayfamızdan bize ulaşabilirsiniz.
                             </div>
                         </div>
                     </div>
@@ -504,3 +592,17 @@
     </div>
 </div>
 <!-- Newsletter End -->
+@section Scripts {
+    <script>
+
+        $(document).ready(function () {
+           
+        });
+        function RandevuKaydet() {
+
+            
+
+        }
+
+    </script>
+}

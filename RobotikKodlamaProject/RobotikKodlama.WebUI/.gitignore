@@ -20,3 +20,10 @@ obj/
 *.pyc
 *.cache
 *.zip
+
+
+publish/
+
+# IDE ve iþletim sistemi dosyalarý
+.DS_Store
+Thumbs.db

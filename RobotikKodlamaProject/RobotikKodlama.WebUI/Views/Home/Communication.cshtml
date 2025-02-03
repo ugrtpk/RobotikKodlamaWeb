@@ -1,5 +1,21 @@
-﻿<!-- Contact Start -->
-<div class="container-fluid py-5">
+﻿
+<div class="container-fluid py-5 col-md-6 justify-content-center" id="basariliDiv">
+
+    <div class="alert alert-success" role="alert" align="center">
+        <span style="font-size:30px;"><b> İşlem Başarılı! </b><br />
+        </span>
+       Eğitim koordinatörlerimiz en kısa zamanda mesajınızla ilgili geri dönüş sağlayacaktır. <br /><br />
+
+       Teşekkürler.
+    </div>
+
+
+</div>
+
+
+
+<!-- Contact Start -->
+<div class="container-fluid py-5" id="contactFormDiv">
     <div class="container py-5">
         <div class="mx-auto text-center wow fadeIn" data-wow-delay="0.1s" style="max-width: 500px;">
             <div class="btn btn-sm border rounded-pill text-primary px-3 mb-3">İletişim</div>
@@ -13,33 +29,37 @@
                         <div class="row g-3">
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="name" placeholder="Your Name">
+                                    <input type="text" class="form-control" id="name" name="AdSoyad">
                                     <label for="name">Adınız</label>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-floating">
-                                    <input type="email" class="form-control" id="email" placeholder="Your Email">
+                                    <input type="email" class="form-control" id="email" name="Email">
                                     <label for="email">Email Adresiniz</label>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="subject" placeholder="Subject">
+                                    <input type="text" class="form-control" id="telefon" name="Telefon">
+                                    <label for="telefon">Telefon</label>
+                                </div>
+                            </div>
+                            <div class="col-12">
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="subject" name="Konu">
                                     <label for="subject">Konu</label>
                                 </div>
                             </div>
                             <div class="col-12">
                                 <div class="form-floating">
-                                    <textarea class="form-control" placeholder="Leave a message here" id="message" style="height: 150px"></textarea>
+                                    <textarea class="form-control" id="message" style="height: 150px" name="Mesaj"></textarea>
                                     <label for="message">Mesaj</label>
                                 </div>
                             </div>
 
-                             <input type="hidden" id="recaptchaResponse" name="recaptcha_response">
-
                             <div class="col-12">
-                                <button class="btn btn-primary w-100 py-3" type="submit">Gönder</button>
+                                <button class="btn btn-primary w-100 py-3" type="button" id="btnGonder" onclick="Send();">Gönder</button>
                             </div>
                         </div>
                     </form>
@@ -50,10 +70,44 @@
 </div>
 <!-- Contact End -->
 
-<script>
-    grecaptcha.ready(function () {
-        grecaptcha.execute('6LcKoLYqAAAAAG19nGjImigFlVrIevCgVJexReSf', { action: 'submit' }).then(function (token) {
-            document.getElementById('recaptchaResponse').submit();
+@section Scripts {
+    <script>
+
+        $(document).ready(function () {
+            $('#basariliDiv').hide();
+            $('#contactFormDiv').show();
+            
         });
-    });
-</script>
+        function Send() {
+
+
+            let formArray = $('#frmContact').serializeArray();
+            let jsonData = {};
+
+            $.each(formArray, function () {
+                jsonData[this.name] = this.value;
+            });
+
+            let jsonString = JSON.stringify(jsonData);
+
+            $.ajax({
+                url: "/Home/SendContactForm",
+                contentType: 'application/json',
+                type: 'post',
+                data: jsonString,
+                success: function (gelenCevap) {
+                    //İşlem sonucu başarılı
+                    $('#basariliDiv').show();
+                    $('#contactFormDiv').hide();
+                },
+                error: function (hataMesaji) {
+                    //işlem sonucunda hata alınıyorsa.
+                    $('#basariliDiv').hide();
+                    $('#contactFormDiv').show();
+                }
+            });
+          
+        }
+
+    </script>
+}
