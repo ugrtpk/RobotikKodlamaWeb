@@ -42,6 +42,11 @@ namespace RobotikKodlama.WebUI.Controllers
             return View();
         }
 
+        public IActionResult Blog()
+        {
+            return View();
+        }
+
         [HttpPost]
         public IActionResult SendContactForm([FromBody] ContactViewModel model)
         {

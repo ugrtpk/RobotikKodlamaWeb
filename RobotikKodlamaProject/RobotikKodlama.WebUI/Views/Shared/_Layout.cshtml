@@ -31,6 +31,42 @@
 
     <!-- Template Stylesheet -->
     <link href="~/css/style.css" rel="stylesheet">
+
+
+    <style type="text/css">
+        .whatsapp-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            align-items: center;
+            background: #25D366;
+            color: white;
+            padding: 10px 15px;
+            border-radius: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            font-family: Arial, sans-serif;
+            font-size: 16px;
+            font-weight: bold;
+            text-decoration: none;
+            transition: transform 0.2s ease-in-out;
+        }
+
+            .whatsapp-container:hover {
+                transform: scale(1.1);
+            }
+
+            .whatsapp-container img {
+                width: 40px;
+                height: 40px;
+                margin-right: 10px;
+            }
+
+        .whatsapp-text {
+            white-space: nowrap;
+        }
+</style>
+
 </head>
 
 <body>
@@ -63,7 +99,7 @@
                         <a href="~/Home/Educations" class="nav-item nav-link">Eğitimler</a>
                         <a href="#" class="nav-item nav-link">Galeri</a>
                         <a href="~/Home/SSS" class="nav-item nav-link">S.S.S.</a>
-                        <a href="#" class="nav-item nav-link">Blog</a>
+                        <a href="~/Home/Blog" class="nav-item nav-link">Blog</a>
                         
                         <a href="~/Home/Communication" class="nav-item nav-link">İletişim</a>
                     </div>
@@ -110,27 +146,52 @@
                         <a class="btn btn-outline-light btn-social" href="#"><i class="fab fa-linkedin-in"></i></a>
                     </div>
                 </div>
-                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.5s">
-                    <h5 class="text-white mb-4">Kısayollar</h5>
-                    <a class="btn btn-link" href="/Home/About">Hakkımızda</a>
-                    <a class="btn btn-link" href="/Home/Communication">İletişim</a>
-                    @* <a class="btn btn-link" href="">Privacy Policy</a>
-                    <a class="btn btn-link" href="">Terms & Condition</a>
-                    <a class="btn btn-link" href="">Career</a> *@
+                <div class="col-md-6 col-lg-2 wow fadeIn" data-wow-delay="0.5s">
+                    <h5 class="text-white mb-4">Eğitimler</h5>
+                    <a class="btn btn-link" href="/Home/Educations">Robotik Kodlama Eğitimi</a>
+                    <a class="btn btn-link" href="/Home/Educations">STEM Eğitimi</a>
+                    <a class="btn btn-link" href="/Home/Educations">Bireysel Kodlama Dersleri</a>
+                    <a class="btn btn-link" href="/Home/Educations">Grup Kodlama Dersleri</a>
+                    <a class="btn btn-link" href="/Home/Educations">Online  Kodlama Dersleri</a>
+                    <a class="btn btn-link" href="/Home/Educations">Yüz Yüze  Kodlama Dersleri</a>
+                    <a class="btn btn-link" href="/Home/Educations">Scratch ile Programlama</a>
+                    <a class="btn btn-link" href="/Home/Educations">Oyun Kodlama</a>
+                    <a class="btn btn-link" href="/Home/Educations">Animasyon Kodlama</a>
+                    <a class="btn btn-link" href="/Home/Educations">Dijital Okuryazarlık </a>
+                    <a class="btn btn-link" href="/Home/Educations">Güvenli İnternet Kullanımı</a>
+                    <a class="btn btn-link" href="/Home/Educations">K.V.K.K. Eğitimleri</a>
+                   
                 </div>
-                <div class="col-md-6 col-lg-3 wow fadeIn" data-wow-delay="0.7s">
+                
+                <div class="col-md-6 col-lg-2 wow fadeIn" data-wow-delay="0.7s">
                     <h5 class="text-white mb-4">Hizmetlerimiz</h5>
-                    <a class="btn btn-link" href="">Robotik Kodlama</a>
-                    <a class="btn btn-link" href="">Oyun Temelli Kodlama Eğitimleri</a>
-                    <a class="btn btn-link" href="">Robot Yapımı ve Programlama Atölyeleri</a>
-                    <a class="btn btn-link" href="">STEM Eğitimi (Fen, Teknoloji, Mühendislik, Matematik)</a>
-                    <a class="btn btn-link" href="">Yaratıcı Tasarım ve Teknoloji Çalışmaları</a>
-                    <a class="btn btn-link" href="">Yapay Zeka Destekli Eğitimler</a>
-                    <a class="btn btn-link" href=""> Sağ-Sol Yön ve Algoritmik Düşünce Eğitimleri</a>
-                    <a class="btn btn-link" href=""> Velilere Yönelik Gelişim Raporları</a>
-                    <a class="btn btn-link" href=""> Doğa ve Teknoloji Uyumlu Etkinlikler</a>
-                    <a class="btn btn-link" href=""> Grup ve Bireysel Eğitimler</a>
+                    <a class="btn btn-link" href="/Home/Services">Eğitim Kurumlarına Özel Programlar</a>
+                    <a class="btn btn-link" href="/Home/Services">Birebir Özel Ders</a>
+                    <a class="btn btn-link" href="/Home/Services">Grup Dersleri</a>
+                    <a class="btn btn-link" href="/Home/Services">Online Eğitimler</a>
+                    <a class="btn btn-link" href="/Home/Services">Yüz Yüze Eğitimler</a>
+                    <a class="btn btn-link" href="/Home/Services">Robotik Kodlama Atölyeleri</a>
+                    <a class="btn btn-link" href="/Home/Services">STEM Eğitimleri</a>
+                    <a class="btn btn-link" href="/Home/Services">Tale Bot ile Kodlama Eğitimi</a>
+                    <a class="btn btn-link" href="/Home/Services">Süper Doc Robot ile Temel Kodlama Eğitimi</a>
+                  
                 </div>
+
+                <div class="col-md-6 col-lg-2 wow fadeIn" data-wow-delay="0.7s">
+                    <h5 class="text-white mb-4"></h5>
+               
+                    <a class="btn btn-link" href="/Home/Services">LEGO Essential ile Robotik Kodlama</a>
+                    <a class="btn btn-link" href="/Home/Services">SPIKE ile Robotik Kodlama</a>
+                    <a class="btn btn-link" href="/Home/Services">Prime ile Robotik Kodlama</a>
+                    <a class="btn btn-link" href="/Home/Services">Scratch ile Oyun Kodlama</a>
+                    <a class="btn btn-link" href="/Home/Services">Scratch ile Animasyon Kodlama</a>
+                    <a class="btn btn-link" href="/Home/Services">Dijital Okuryazarlık Eğitimi</a>
+                    <a class="btn btn-link" href="/Home/Services">Seminerler</a>
+                    <a class="btn btn-link" href="/Home/Services">Velilere Yönelik Gelişim Raporları</a>
+                    <a class="btn btn-link" href="/Home/Services">Yaratıcı Tasarım ve Teknoloji Çalışmaları</a>
+                    <a class="btn btn-link" href="/Home/Services">Yapay Zeka Destekli Eğitimler</a>
+                </div>
+              
             </div>
         </div>
         <div class="container wow fadeIn" data-wow-delay="0.1s">
@@ -158,8 +219,12 @@
 
 
     <!-- Back to Top -->
-    <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top pt-2"><i class="bi bi-arrow-up"></i></a>
+   @*  <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top pt-2"><i class="bi bi-arrow-up"></i></a> *@
 
+    <a href="https://wa.me/905554993055" target="_blank" class="whatsapp-container">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+        <span class="whatsapp-text">WhatsApp İletişim Hattı</span>
+    </a>
 
     <!-- JavaScript Libraries -->
     <!-- jQuery CDN (Google veya jQuery Resmi CDN) -->
