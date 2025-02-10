@@ -62,5 +62,18 @@ namespace RobotikKodlama.WebUI.Controllers
             return Ok(Email.SendEmail("Techbot Academy - ÝLETÝÞÝM - " + model.Konu, sb.ToString()));
         }
 
+        [HttpPost]
+        public IActionResult Appointment([FromBody] AppointmentViewModel model)
+        {
+            StringBuilder sb = new StringBuilder();
+            sb.AppendLine("RANDEVU#############<br /><br />");
+            sb.AppendLine("Ad Soyad: " + model.AdSoyad + "<br />");
+            sb.AppendLine("Telefon: " + model.Telefon + "<br />");
+            sb.AppendLine("Açýklama: " + model.Aciklama + "<br />");
+            sb.AppendLine("Tarih: " + DateTime.Now + "<br />");
+
+            return Ok(Email.SendEmail("Techbot Academy - RANDEVU", sb.ToString()));
+        }
+
     }
 }
