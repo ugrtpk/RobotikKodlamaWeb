@@ -21,13 +21,13 @@
                 <p class="text-white mb-4 animated slideInRight">
                     Robotik dünyasına adım at ve kendi projelerini hayata geçir! Sitemizde eğlenceli kodlama dersleri, interaktif aktiviteler ve yaratıcı robot yapım rehberleri seni bekliyor. Hayal gücünü kullan, yeni şeyler keşfet ve kendi robotlarını inşa ederek geleceğin mühendisleri arasında yerini al. Her adımda öğrenmenin keyfini çıkar ve teknolojiyle dost ol!
                 </p>
-                <a href="#" class="btn btn-warning py-sm-3 px-sm-5 rounded-pill me-3 animated slideInRight" data-bs-toggle="modal" data-bs-target="#kayitModal"><b>ÜCRETSİZ Deneme Ders Kaydı</b></a>
+                <a href="#" class="btn btn-warning py-sm-3 px-sm-5 rounded-pill me-3 animated slideInRight" data-bs-toggle="modal" data-bs-target="#kayitModal" onclick="DivAyarla()"><b>ÜCRETSİZ Deneme Ders Kaydı</b></a>
                 <a href="/Home/Communication" class="btn btn-outline-light py-sm-3 px-sm-5 rounded-pill animated slideInRight">İletişim</a>
             </div>
             <div class="col-lg-6 align-self-end text-center text-lg-end">
                 <!--<img class="img-fluid" src="img/hero-img.png" alt="">-->
                 <!--<img class="img-fluid" src="robot/1.png" alt="" style="border-radius: 30px 30px 0px 0px; width: 425px;">-->
-                <img src="https://st5.depositphotos.com/9999814/64553/i/450/depositphotos_645537928-stock-photo-futuristic-robot-artificial-intelligence-huminoid.jpg" alt="" style="border-radius: 15px 15px 0px 0px; max-width:115%;height:auto;">
+                <img src="https://st5.depositphotos.com/9999814/64553/i/450/depositphotos_645537928-stock-photo-futuristic-robot-artificial-intelligence-huminoid.jpg" alt="Okul öncesi çocuklar için robotik kodlama dersi, Bağlıca Robotik Kodlama" style="border-radius: 15px 15px 0px 0px; max-width:115%;height:auto;">
                 <!--<img class="img-fluid" src="https://robokido.tokotema.com/wp-content/uploads/2023/08/happy-classmates-throwing-hands-in-air-and-rejoici-2022-12-16-19-13-41-utc-1-1024x422.jpg" alt="">-->
             </div>
         </div>
@@ -44,56 +44,67 @@
             </div>
             <div class="modal-body">
 
-                <form id="frmRandevu">
-                    <div class="row">
-                        <div class="form-group">
-                            <label>Velinin Adı Soyadı</label>
-                            <input type="text" class="form-control" name="VeliAdSoyad" id="tbAdSoyad" />
-                        </div>
-                        <div class="form-group">
-                            <label>Velinin Telefonu</label>
-                            <input type="text" class="form-control" name="VeliTelefon" id="tbTelefon" />
-                        </div>
-                        <div class="form-group">
-                            <label>Öğrencinin Adı Soyadı</label>
-                            <input type="text" class="form-control" name="OgrenciAdSoyad" id="tbOgrenciAdSoyad" />
-                        </div>
-                        <div class="form-group">
-                            <label>Öğrencinin Doğum Tarihi</label>
-                            <input type="date" class="form-control" name="OgrenciDogumTarihi" id="tbOgrenciDogumTarihi" />
-                        </div>
-                        <div class="form-group">
-                            <label>Öğrencinin Sınıfı</label>
-                            <select class="form-select" name="OgrenciSinifi" id="tbOgrenciSinif">
+                <div id="basariliDiv">
 
-                                <option value="-1">Seçiniz</option>
-                                <option value="Okul Öncesi(3 Yaş)">Okul Öncesi(3 Yaş)</option>
-                                <option value="Okul Öncesi(4 Yaş)">Okul Öncesi(4 Yaş)</option>
-                                <option value="Okul Öncesi(5 Yaş)">Okul Öncesi(5 Yaş)</option>
-                                <option value="Ana Sınıfı">Ana Sınıfı</option>
-                                <option value="1.Sınıf">1.Sınıf</option>
-                                <option value="2.Sınıf">2.Sınıf</option>
-                                <option value="3.Sınıf">3.Sınıf</option>
-                                <option value="4.Sınıf">4.Sınıf</option>
-                            </select>
-                        </div> 
-                        <div class="form-group">
-                            <label>Açıklama</label>
-                            <textarea cols="7" class="form-control" name="Aciklama" id="tbAciklama">
+                    <div class="alert alert-success" role="alert" align="center">
+                        <span style="font-size:30px;">
+                            <b> İşlem Başarılı! </b><br />
+                        </span>
+                        Eğitim koordinatörlerimiz en kısa zamanda mesajınızla ilgili geri dönüş sağlayacaktır. <br /><br />
+
+                        Teşekkürler.
+                    </div>
+
+
+                </div>
+
+                <div id="randevuDiv">
+                    <form id="frmRandevu">
+                        <div class="row">
+                            <div class="form-group">
+                                <label>Adınız Soyadınız</label>
+                                <input type="text" class="form-control" name="AdSoyad" id="tbAdSoyad" required/>
+                            </div>
+                            <div class="form-group">
+                                <label>Telefon Numaranız</label>
+                                <input type="text" class="form-control" name="Telefon" id="tbTelefon" required />
+                            </div>
+                            <div class="form-group">
+                                <label>Öğrencinin Sınıfı</label>
+                                <select class="form-select" name="OgrenciSinifi" id="tbOgrenciSinif">
+
+                                    <option value="-1">Seçiniz</option>
+                                    <option value="Okul Öncesi(3 Yaş)">Okul Öncesi(3 Yaş)</option>
+                                    <option value="Okul Öncesi(4 Yaş)">Okul Öncesi(4 Yaş)</option>
+                                    <option value="Okul Öncesi(5 Yaş)">Okul Öncesi(5 Yaş)</option>
+                                    <option value="Ana Sınıfı">Ana Sınıfı</option>
+                                    <option value="1.Sınıf">1.Sınıf</option>
+                                    <option value="2.Sınıf">2.Sınıf</option>
+                                    <option value="3.Sınıf">3.Sınıf</option>
+                                    <option value="4.Sınıf">4.Sınıf</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Açıklama</label>
+                                <textarea cols="7" class="form-control" name="Aciklama" id="tbAciklama">
 
                             </textarea>
+                            </div>
+                            <div class="form-group alert alert-warning" role="alert">
+                                Randevu gün ve saati için eğitim koordinatörümüz sizi arayacak ve birlikte uygun gün ve saat belirlenecektir.
+                            </div>
                         </div>
-                        <div class="form-group alert alert-warning" role="alert">
-                            Randevu gün ve saati için eğitim koordinatörümüz sizi arayacak ve birlikte uygun gün ve saat belirlenecektir.
-                        </div>
-                    </div>
-                </form>
+                    </form>
+                </div>
 
 
                
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-success" id="btnKaydet" onclick="RandevuKaydet();">Kaydet</button>
+                <button type="button" class="btn btn-success" id="btnKaydet">
+                    <span id="btnText">Kaydet</span>
+                    <span id="btnSpinner" class="spinner-border spinner-border-sm ms-2" role="status" aria-hidden="true" style="display: none;"></span>
+                </button>
                 <button type="button" class="btn btn-danger" data-bs-dismiss="modal" id="btnKapat">Kapat</button>
             </div>
         </div>
@@ -248,7 +259,7 @@
                 </div>
             </div>
             <div class="col-lg-6 align-self-center mb-md-5 pb-md-5 text-md-end wow fadeIn" data-wow-delay="0.5s">
-                <img style="max-width:115%;height:auto;border-radius:15px;" src="~/img/robotik-2.jpg" alt="">
+                <img style="max-width:115%;height:auto;border-radius:15px;" src="~/img/robotik-2.jpg" alt="Okul öncesi çocuklar için robotik kodlama, bağlıca robotik kodlama">
             </div>
         </div>
     </div>
@@ -260,7 +271,7 @@
         <div class="row g-5 align-items-center">
             <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
                 <div class="about-img">
-                    <img class="img-fluid" src="~/img/about-img.jpg">
+                    <img class="img-fluid" src="~/img/about-img.jpg" alt="Okul öncesi çocuklar için robotik kodlama, Bağlıca Robotik Kodlama">
                 </div>
             </div>
             <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
@@ -305,7 +316,7 @@
 
             <div class="col-lg-4 wow fadeIn" data-wow-delay="0.5s">
                 <div class="case-item position-relative overflow-hidden rounded mb-2">
-                    <img class="img-fluid" src="~/img/project-2.jpg" alt="">
+                    <img class="img-fluid" src="~/img/project-2.jpg" alt="Okul öncesi çocuklar için robotik kodlama, Bağlıca Robotik Kodlama">
                     <a class="case-overlay text-decoration-none" href="">
                         <small>Yapay Zeka</small>
                         <h5 class="lh-base text-white mb-3">
@@ -318,7 +329,7 @@
 
             <div class="col-lg-4 wow fadeIn" data-wow-delay="0.3s">
                 <div class="case-item position-relative overflow-hidden rounded mb-2">
-                    <img class="img-fluid" src="~/img/project-1.jpg" alt="">
+                    <img class="img-fluid" src="~/img/project-1.jpg" alt="Okul öncesi çocuklar için robotik kodlama, Çayyolu Robotik Kodlama">
                     <a class="case-overlay text-decoration-none" href="">
                         <small>Robotik Kodlama</small>
                         <h5 class="lh-base text-white mb-3">
@@ -331,7 +342,7 @@
 
             <div class="col-lg-4 wow fadeIn" data-wow-delay="0.7s">
                 <div class="case-item position-relative overflow-hidden rounded mb-2">
-                    <img class="img-fluid" src="~/img/project-3.jpg" alt="">
+                    <img class="img-fluid" src="~/img/project-3.jpg" alt="Okul öncesi çocuklar için robotik kodlama, etimesgut robotik kodlama">
                     <a class="case-overlay text-decoration-none" href="">
                         <small>Geleceğin Meslekleri</small>
                         <h5 class="lh-base text-white mb-3">
@@ -344,7 +355,7 @@
 
             <div class="col-lg-4 wow fadeIn" data-wow-delay="0.7s">
                 <div class="case-item position-relative overflow-hidden rounded mb-2">
-                    <img class="img-fluid" src="~/img/about-img.jpg" alt="">
+                    <img class="img-fluid" src="~/img/about-img.jpg" alt="Okul öncesi çocuklar için robotik kodlama, eryaman robotik kodlama">
                     <a class="case-overlay text-decoration-none" href="">
                         <small>Biyomimikri </small>
                         <h5 class="lh-base text-white mb-3">
@@ -539,7 +550,7 @@
     <div class="container">
         <div class="row g-5 align-items-center">
             <div class="col-md-5 ps-lg-0 pt-5 pt-md-0 text-start wow fadeIn" data-wow-delay="0.3s">
-                <img class="img-fluid" src="img/newsletter.png" alt="">
+                <img class="img-fluid" src="img/newsletter.png" alt="Okul öncesi çocuklar için robotik kodlama, ankara robotik kodlama">
             </div>
             <div class="col-md-7 py-5 newsletter-text wow fadeIn" data-wow-delay="0.5s">
                 <div class="btn btn-sm border rounded-pill text-white px-3 mb-3">Haberler</div>
@@ -557,15 +568,107 @@
     </div>
 </div>
 <!-- Newsletter End -->
+
+<div class="toast align-items-center text-bg-danger border-0" id="errorToast" role="alert" aria-live="assertive" aria-atomic="true">
+  <div class="d-flex">
+    <div class="toast-body">
+      Lütfen tüm zorunlu alanları doldurunuz!
+    </div>
+    <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+  </div>
+</div>
+
 @section Scripts {
     <script>
 
+        function DivAyarla() {
+            $('#basariliDiv').hide();
+            $('#contactFormDiv').show();
+        }
+
         $(document).ready(function () {
-           
+            DivAyarla();
+
+            $('#btnKaydet').click(function (e) {
+                e.preventDefault(); // Formun otomatik gönderilmesini engeller
+
+                var isValid = true;
+
+                // Tüm required alanları kontrol et
+                $('#frmRandevu').find('input[required], select[required], textarea[required]').each(function () {
+                    if ($(this).val().trim() === '' || $(this).val() === '-1') {
+                        $(this).addClass('is-invalid'); // Bootstrap uyumlu kırmızı çerçeve
+                        isValid = false;
+                    } else {
+                        $(this).removeClass('is-invalid').addClass('is-valid'); // Doğru doldurulmuşsa yeşil çerçeve
+                    }
+                });
+
+                // Eğer tüm alanlar doluysa formu kaydet
+                if (isValid) {
+                    // Butonu devre dışı bırak ve loading göster
+                    $('#btnKaydet').prop('disabled', true);
+                    $('#btnText').text('Gönderiliyor...');
+                    $('#btnSpinner').show();
+                    // Simülasyon: 2 saniye sonra RandevuKaydet fonksiyonunu çalıştırıyoruz.
+                    RandevuKaydet(); // Gerçek kaydetme işlemi burada yapılır
+
+                    setTimeout(function () {
+                        
+
+                        // İşlem tamamlandıktan sonra butonu eski haline döndür
+                        $('#btnKaydet').prop('disabled', false);
+                        $('#btnText').text('Kaydet');
+                        $('#btnSpinner').hide();
+                    }, 5000); // 5 saniye simülasyon süresi
+                } else {
+                    // Boş alan varsa uyarı göster
+                    var toast = new bootstrap.Toast(document.getElementById('errorToast'));
+                    toast.show();
+                }
+            });
+
+            // Kullanıcı alanı doldurduğunda hata mesajını kaldır
+            $('#frmRandevu input, #frmRandevu select, #frmRandevu textarea').on('input change', function () {
+                if ($(this).val().trim() !== '' && $(this).val() !== '-1') {
+                    $(this).removeClass('is-invalid').addClass('is-valid');
+                } else {
+                    $(this).removeClass('is-valid').addClass('is-invalid');
+                }
+            });
+
+
+
         });
         function RandevuKaydet() {
 
-            
+            let formArray = $('#frmRandevu').serializeArray();
+            let jsonData = {};
+
+            $.each(formArray, function () {
+                jsonData[this.name] = this.value;
+            });
+
+            let jsonString = JSON.stringify(jsonData);
+
+            $.ajax({
+                url: "/Home/Appointment",
+                contentType: 'application/json',
+                type: 'post',
+                data: jsonString,
+                success: function (gelenCevap) {
+                    //İşlem sonucu başarılı
+                    $('#basariliDiv').show();
+                    $('#randevuDiv').hide();
+                    $('#btnKaydet').hide();
+                },
+                error: function (hataMesaji) {
+                    //işlem sonucunda hata alınıyorsa.
+                    $('#basariliDiv').hide();
+                    $('#contactFormDiv').show();
+                    $('#btnKaydet').show();
+                }
+            });
 
         }
 
